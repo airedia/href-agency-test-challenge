@@ -70,7 +70,7 @@ body {
 
   .section_home-dissolve {
     opacity: 0;
-    transition: opacity 2s ease; /* Adjust the duration as needed */
+    transition: opacity 2s ease; 
 }
 
 
