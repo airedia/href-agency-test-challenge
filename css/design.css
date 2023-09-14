@@ -299,6 +299,10 @@ body {
     
    }
 
+    .section_home{
+        height: 1200px;
+    }
+
     .section_home p{
       font-size: 16px;
       text-align: justify;
