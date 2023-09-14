@@ -138,6 +138,57 @@ window.addEventListener('scroll', () => {
     }
 });
 
+function isMobileDevice() {
+  return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+}
+
+function isMobileDevice() {
+  return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+}
+
+// Handle the parallax effect for mobile devices
+function handleParallaxForMobile() {
+  var parallaxElement = document.querySelector('.parallax');
+  var contentBelowElement = document.querySelector('.section_home');
+  var lastScrollPosition = 0;
+
+  window.addEventListener('scroll', handleParallax);
+
+  function handleParallax() {
+    var scrollPosition = window.pageYOffset;
+    var parallaxOffset = (scrollPosition - parallaxElement.offsetTop) * 0.4;
+
+    if (scrollPosition >= parallaxElement.offsetTop) {
+      parallaxElement.style.transform = 'translateY(' + parallaxOffset + 'px)';
+      contentBelowElement.style.transform = 'translateY(' + -parallaxOffset + 'px)';
+    } else {
+      parallaxElement.style.transform = 'translateY(0)';
+      contentBelowElement.style.transform = 'translateY(0)';
+    }
+
+
+    lastScrollPosition = scrollPosition;
+  }
+}
+
+// Apply parallax effect for each media query on mobile devices
+if (isMobileDevice()) {
+  if (window.matchMedia("(max-width: 280px)").matches) {
+    handleParallaxForMobile();
+  }
+
+  if (window.matchMedia("(max-width: 539px)").matches) {
+    handleParallaxForMobile();
+  }
+
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    handleParallaxForMobile();
+  }
+
+  if (window.matchMedia("(max-width: 1024px)").matches) {
+    handleParallaxForMobile();
+  }
+}
 
     </script>
 
