@@ -501,6 +501,9 @@ body {
 
   @media screen and (width: 540px) and (height: 720px) { /* Surface Duo */
 
+    .section_home{
+        height: 1200px;
+    }
     .contact-message input[name=message]{
       padding-right: 10.5%;
     }
